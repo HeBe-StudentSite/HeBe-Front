@@ -25,7 +25,6 @@ $mainColorLight: #869CFF;
 }
 
 
-
 //왼쪽
 #left-container{
     position: absolute;
@@ -36,6 +35,11 @@ $mainColorLight: #869CFF;
     background: linear-gradient(180deg, #1d3eb8b7 0%, rgba(135, 153, 220, 0) 100%),url("../styles/img/chrissa-giannakoudi-fGLRd0B_39M-unsplash.jpg");
     box-shadow: inset 0px 4px 14px rgba(0, 0, 0, 0.25); 
     
+    & >#icon-container{
+        width: 50px;
+        margin: 27px;
+        margin-top: 70px;
+    }
     & >#hebe-Sub-1{
         @include hebe-Sub(#FFFFFF,-1.81%,84.79%,59.08%,34.96%);
     }
@@ -53,18 +57,53 @@ $mainColorLight: #869CFF;
     left: 106px;
     & >#bar{
         @include mainSet(absolute,100%,160px);
-    }
-    & >#main-container{
-        @include mainSet(absolute,100%,100%);
-        top: 0;
-        right: 0;
+        display: flex;
+        align-items: center;
+        & >ul li{
+            font-family: Roboto;
+            font-size: 13pt;
+            display: inline-block;
+            list-style: none;
+            margin: 0 35px;
+
+            & >a{
+                text-decoration: none;
+                color: $mainColor;
+                position: relative;
+
+            
+
+                // &::after {
+                //     content: '';
+                //     width: 0;
+                //     height: 10px;
+                //     position: absolute;
+                //     -webkit-transform: translateX(-50%);
+                //     top: -10px;
+                //     transition: $mainColorLight 0.5s ease;
+                // }
+            }
+            &:hover{
+                font-weight:bold;
+                color:$mainColor*2;
+            }
+    
+        }
         & >h1{
+            width: 250px;
             color: $mainColor;
             font: normal 900 4.5em/46px Roboto;
             letter-spacing: 3.5px;
+            margin-left: 94px;
+            margin-right: 10px;
         }
-        & #hebe-Sub-3>{
-            @include hebe-Sub($mainColor,98.54%,-15.56%,34.57%,60.84%);
+    }
+    & >#main-container{
+        @include mainSet(absolute,100%,100%);
+    
+        & >#hebe-Sub-3{
+            @include hebe-Sub($mainColor,10,-100px,250px,10);
+            position: fixed; //이후 수정
         }
     }
 }

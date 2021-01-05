@@ -10,6 +10,12 @@
           box-shadow: inset 0px 4px 14px rgba(0, 0, 0, 0.25);
 }
 
+#left-container > #icon-container {
+  width: 50px;
+  margin: 27px;
+  margin-top: 70px;
+}
+
 #left-container > #hebe-Sub-1 {
   position: absolute;
   left: -1.81%;
@@ -48,32 +54,59 @@
   position: absolute;
   width: 100%;
   height: 160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#container > #bar > ul li {
+  font-family: Roboto;
+  font-size: 13pt;
+  display: inline-block;
+  list-style: none;
+  margin: 0 35px;
+}
+
+#container > #bar > ul li > a {
+  text-decoration: none;
+  color: #37447E;
+  position: relative;
+}
+
+#container > #bar > ul li:hover {
+  font-weight: bold;
+  color: #6e88fc;
+}
+
+#container > #bar > h1 {
+  width: 250px;
+  color: #37447E;
+  font: normal 900 4.5em/46px Roboto;
+  letter-spacing: 3.5px;
+  margin-left: 94px;
+  margin-right: 10px;
 }
 
 #container > #main-container {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  right: 0;
 }
 
-#container > #main-container > h1 {
-  color: #37447E;
-  font: normal 900 4.5em/46px Roboto;
-  letter-spacing: 3.5px;
-}
-
-#container > #main-container #hebe-Sub-3 > {
+#container > #main-container > #hebe-Sub-3 {
   position: absolute;
-  left: 98.54%;
-  right: -15.56%;
-  top: 34.57%;
-  bottom: 60.84%;
+  left: 10;
+  right: -100px;
+  top: 250px;
+  bottom: 10;
   font: normal bold 5em/46px Roboto;
   letter-spacing: 3.5px;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #37447E;
+  position: fixed;
 }
