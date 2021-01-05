@@ -1,9 +1,73 @@
-$mainColor: pink;
+$mainColor: #37447E;
+$mainColorLight: #869CFF;
 
-body{
-    background: $mainColor;
+@mixin hebe-Sub($color,$left,$right,$top,$bottom) {
+    position: absolute;
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+     
+    font: normal bold 5em/46px Roboto;
+    letter-spacing: 3.5px;
+    transform: rotate(-90deg);
+    @if $color != #FFFFFF {
+       -webkit-text-fill-color: transparent;
+       -webkit-text-stroke: 2px $color;
+    }@else{
+        color: $color;
+    }
+}
+@mixin mainSet($position,$width,$height) {
+    position: $position;
+    width: $width;
+    height:$height;
 }
 
-h1{
-    color: white;
+
+
+//왼쪽
+#left-container{
+    position: absolute;
+    width: 106px;
+    height:100%;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(180deg, #1d3eb8b7 0%, rgba(135, 153, 220, 0) 100%),url("../styles/img/chrissa-giannakoudi-fGLRd0B_39M-unsplash.jpg");
+    box-shadow: inset 0px 4px 14px rgba(0, 0, 0, 0.25); 
+    
+    & >#hebe-Sub-1{
+        @include hebe-Sub(#FFFFFF,-1.81%,84.79%,59.08%,34.96%);
+    }
+    & >#hebe-Sub-2{
+        @include hebe-Sub(#DFDFDF,0%,75.1%,60.84%,33.2%);
+    }
+
 }
+
+
+
+//오른쪽
+#container{
+    @include mainSet(absolute,100%,100%);
+    left: 106px;
+    & >#bar{
+        @include mainSet(absolute,100%,160px);
+    }
+    & >#main-container{
+        @include mainSet(absolute,100%,100%);
+        top: 0;
+        right: 0;
+        & >h1{
+            color: $mainColor;
+            font: normal 900 4.5em/46px Roboto;
+            letter-spacing: 3.5px;
+        }
+        & #hebe-Sub-3>{
+            @include hebe-Sub($mainColor,98.54%,-15.56%,34.57%,60.84%);
+        }
+    }
+}
+
+
+
