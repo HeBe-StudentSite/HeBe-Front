@@ -84,10 +84,46 @@
 #container > #bar > h1 {
   width: 250px;
   color: #37447E;
-  font: normal 900 4.5em/46px Roboto;
+  font: normal 1000 4.5em/46px Roboto;
   letter-spacing: 3.5px;
   margin-left: 94px;
   margin-right: 10px;
+}
+
+#container > #bar > #search-bar {
+  position: absolute;
+  width: 300px;
+  height: 45px;
+  background: #869CFF;
+  border-radius: 3em;
+  right: 200px;
+}
+
+#container > #bar > #search-bar > #search-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: #ff000000;
+  border: #ffffff00;
+  font-size: 17px;
+  margin: 2px 0px 0px 10px;
+}
+
+#container > #bar > #search-bar > #search-text::-webkit-input-placeholder {
+  color: white;
+}
+
+#container > #bar > #search-bar > #search-text:-ms-input-placeholder {
+  color: white;
+}
+
+#container > #bar > #search-bar > #search-text::-ms-input-placeholder {
+  color: white;
+}
+
+#container > #bar > #search-bar > #search-text::placeholder {
+  color: white;
 }
 
 #container > #main-container {
@@ -109,4 +145,16 @@
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #37447E;
   position: fixed;
+}
+
+#container > #chat-container {
+  position: fixed;
+  width: 95px;
+  height: 95px;
+  background-color: #37447E;
+  border-radius: 100%;
+  right: 40px;
+  bottom: 40px;
+  -webkit-box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.185);
+          box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.185);
 }

@@ -92,10 +92,29 @@ $mainColorLight: #869CFF;
         & >h1{
             width: 250px;
             color: $mainColor;
-            font: normal 900 4.5em/46px Roboto;
+            font: normal 1000 4.5em/46px Roboto;
             letter-spacing: 3.5px;
             margin-left: 94px;
             margin-right: 10px;
+        }
+        & >#search-bar{
+            @include mainSet(absolute,300px,45px);
+            background:$mainColorLight;
+            border-radius: 3em;
+            right: 200px;
+            
+            & >#search-text{
+                @include mainSet(absolute,100%,100%);
+                color: white;
+                background: #ff000000;
+                border: #ffffff00;
+                font-size: 17px;
+                margin: 2px 0px 0px 10px;
+
+                &::placeholder{
+                    color: white;
+                }
+            }
         }
     }
     & >#main-container{
@@ -105,6 +124,14 @@ $mainColorLight: #869CFF;
             @include hebe-Sub($mainColor,10,-100px,250px,10);
             position: fixed; //이후 수정
         }
+    }
+    & >#chat-container{
+        @include mainSet(fixed,95px,95px);
+        background-color: $mainColor;
+        border-radius: 100%;
+        right: 40px;
+        bottom: 40px;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.185); 
     }
 }
 
