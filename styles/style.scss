@@ -74,10 +74,24 @@ body{
     background: linear-gradient(180deg, #1d3eb8b7 0%, rgba(135, 153, 220, 0) 100%),url("../styles/img/chrissa-giannakoudi-fGLRd0B_39M-unsplash.jpg");
     box-shadow: inset 0px 4px 14px rgba(0, 0, 0, 0.25); 
     
+
     & >#icon-container{
         width: 50px;
         margin: 27px;
-        margin-top: 70px;
+        margin-top: 63px;
+        & >a{
+            text-decoration: none;
+            color: #FFFFFF;
+             
+            font-size: 12.6px;
+        }
+        & >span{
+            @include mainSet(relative,100%,100%);
+            text-decoration: none;
+            color: #FFFFFF;
+            font-size: 12.5px;
+            margin: 0px 0px 5px 4px;
+        }
     }
     & >#hebe-Sub-1{
         @include hebe-Sub(#FFFFFF,-1.81%,84.79%,59.08%,34.96%);
