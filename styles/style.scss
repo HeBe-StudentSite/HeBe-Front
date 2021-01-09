@@ -18,6 +18,31 @@ $mainColorLight: #869CFF;
         color: $color;
     }
 }
+@mixin contentSet() {
+    @include mainSet(absolute,100%,300px);
+            margin: 400px  30px  30px  70px;
+            
+            & >#heart-icon{
+                @include mainSet(relative,18px,18px);
+                background: $mainColorLight;
+                transform: rotate(45deg);
+                bottom: -42px;
+                left: 8px;
+
+                &::before {
+                    @include heartSet();
+                    left: -50%;
+                }
+                &::after {
+                    @include heartSet();
+                    top: -50%;
+                }
+            }
+            & >h3{
+                @include mainSet(absolute,100%,100%);
+                left: 45px;
+            }
+}
 @mixin heartSet() {
     content: "";
     width: 18px;
@@ -26,19 +51,24 @@ $mainColorLight: #869CFF;
     border-radius: 50%;
     background: $mainColorLight;
 }
-
 @mixin mainSet($position,$width,$height) {
     position: $position;
     width: $width;
     height:$height;
 }
 
+body{
+    @include mainSet(absolute,100%,100%);
+    display: block;
+    left: -8px;
+    top: -8px;
+}
 
 //왼쪽
 #left-container{
     position: absolute;
     width: 106px;
-    height:100%;
+    height:89vmax;
     left: 0px;
     top: 0px;
     background: linear-gradient(180deg, #1d3eb8b7 0%, rgba(135, 153, 220, 0) 100%),url("../styles/img/chrissa-giannakoudi-fGLRd0B_39M-unsplash.jpg");
@@ -131,32 +161,21 @@ $mainColorLight: #869CFF;
     
         & >#Bookmark-container{
 
-            @include mainSet(absolute,100%,300px);
-            margin: 400px  30px  30px  70px;
-            
-            & >#heart-icon{
-                @include mainSet(relative,18px,18px);
-                background: $mainColorLight;
-                transform: rotate(45deg);
-                bottom: -42px;
-
-                &::before {
-                    @include heartSet();
-                    left: -50%;
-                }
-                &::after {
-                    @include heartSet();
-                    top: -50%;
-                }
-            }
-            & >h3{
-                @include mainSet(absolute,100%,100%);
-                left: 35px;
-            }
+            @include contentSet();
 
             & >#Bookmark-content{
                 @include mainSet(absolute,83%,100%);
-                margin-top: 50px;
+                margin-top: 54px;
+                background: #b3b3b3;
+            }
+        }
+        & >#update-container{
+            @include contentSet();
+            top: 600px;
+
+            & >#update-content{
+                @include mainSet(absolute,83%,100%);
+                margin-top: 54px;
                 background: #b3b3b3;
             }
         }
@@ -177,9 +196,13 @@ $mainColorLight: #869CFF;
 
 
 
+@media (min-width:1101px)and ( max-width: 1545px) {/* 노트북 */
+    #left-container{height:115vmax;}
 
+}
 //화면 크기에 따라 변환
-@media (max-width:1100px) {/* 노트북 */
+@media (min-width:901px)and(max-width:1100px) {/* 노트북 */
+    #left-container{height: 100%;}
     #search-bar {display: none;}
     #Bookmark-content{
         width: 78%;
