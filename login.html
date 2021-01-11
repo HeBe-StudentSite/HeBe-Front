@@ -5,6 +5,7 @@
         <title>Hebe</title>
         <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <link rel="stylesheet" href="/styles/login.scss" />
+        <script>var exports = {};</script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
@@ -39,7 +40,47 @@
             https://firebase.google.com/docs/web/setup#available-libraries -->
         <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-        <script src="/src/login.js" defer></script>
+        <script>
+        
+            var {firebaseConfig} = require("./src/hebe-fireBase-login.js");
+            firebase.initializeApp(firebaseConfig);
+            var firebaseEmailAuth = firebase.auth();
+            var firebaseDatabase = firebase.database();
+            var userInfo; 
+
+            $(document).ready(function(){
+            
+                $(document).on('click','.join',function(){ 
+                var email = $('#email').val();
+                var password = $('#pwd').val();
+                var name = $('#name').val();
+
+                console.log(email +"    "+password);
+                    
+
+                    firebaseEmailAuth.createUserWithEmailAndPassword(email, password).then(function(user) {
+                        userInfo = user; 
+                    
+                        var ref = firebaseDatabase.ref("users/"+userInfo.uid); 
+                        var obj = {
+                            name: name,
+                        };
+                    
+                        ref.set(obj); 
+                        alert("가입을 축하드립니다! 🎉");
+                        window.location.href = "/index.html"
+                    
+                    }, function(error) {
+                        var errorMessage = error.message;
+                        alert(errorMessage);
+                        
+                    });
+            
+            
+                });
+            });
+
+        </script>
 
     </body>
  
