@@ -20,7 +20,8 @@ $mainColorLight: #869CFF;
 }
 @mixin contentSet() {
     @include mainSet(absolute,100%,300px);
-            margin: 400px  30px  30px  70px;
+            // margin: 400px  30px  30px  70px;
+            margin: 140px  30px  30px  70px;
             
             & >#heart-icon{
                 @include mainSet(relative,18px,18px);
@@ -172,10 +173,75 @@ body{
     }
     & >#main-container{
         @include mainSet(absolute,100%,100%);
+
+        & >#image-slide {
+            @include contentSet();
+
+            img {
+                width: 550px;
+                height: 350px;
+            }
+
+            [type=radio] {
+                display: none;
+            }
+
+            & >#image-slide {
+                height: 35vw;
+                position: relative;
+                perspective: 1000px;
+                transform-style: preserve-3d;
+            }
+
+            & >label {
+                margin: auto;
+                width: 60%;
+                height: 100%;
+                border-radius: 4px;
+                position: absolute;
+                left: 0;
+                right: 0;
+                cursor: pointer;
+                transition: transform 0.4s ease;
+            }
+
+            #s1:checked ~ #slide4, #s2:checked ~#slide5,
+            #s3:checked ~ #slide1, #s4:checked ~#slide2,
+            #s5:checked ~ #slide3{
+                // transform-origin: -30%, 0px, -200px;
+                // transform: translateZ(-200px);
+                transform: perspective(500px) translate3d(-30%, 0, -200px);
+                // box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+            }
+            // #s1:checked ~ #slide5, #s2:checked ~#slide1,
+            // #s3:checked ~ #slide2, #s4:checked ~#slide3,
+            // #s5:checked ~ #slide4{
+            //     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+            //     transform: translate3d(-15%, 0, -100px);
+            // }
+            // #s1:checked ~ #slide1, #s2:checked ~#slide2,
+            // #s3:checked ~ #slide2, #s4:checked ~#slide4,
+            // #s5:checked ~ #slide5{
+            //     box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+            //     transform: translate3d(0, 0, 0);
+            // }
+            // #s1:checked ~ #slide2, #s2:checked ~#slide3,
+            // #s3:checked ~ #slide3, #s4:checked ~#slide5,
+            // #s5:checked ~ #slide1{
+            //     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+            //     transform: translate3d(-15%, 0, -100px);
+            // }
+            // #s1:checked ~ #slide3, #s2:checked ~#slide4,
+            // #s3:checked ~ #slide5, #s4:checked ~#slide1,
+            // #s5:checked ~ #slide2{
+            //     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+            //     transform: translate3d(30%, 0, -100px);
+            // }
+        }
     
         & >#Bookmark-container{
-
             @include contentSet();
+            margin-top: 480px;
 
             & >#Bookmark-content{
                 @include mainSet(absolute,83%,100%);
@@ -185,7 +251,8 @@ body{
         }
         & >#update-container{
             @include contentSet();
-            top: 600px;
+            // top: 600px;
+            margin-top: 900px;
 
             & >#update-content{
                 @include mainSet(absolute,83%,100%);
