@@ -3,10 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <title>Hebe</title>
+
+        <link rel="stylesheet" href="./src/dist/jquery.flipster.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./src/dist/jquery.flipster.min.js"></script>
+
         <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
         <script src="./src/app.js" defer></script>
         <link rel="stylesheet" href="./styles/style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script>
+            $( document ).ready(function(){
+                var options		= {
+                    start: 0,
+                    fadeIn: 400,
+                    loop: true,
+                    buttonPrev: 'Previous',
+                    buttonNext: 'Next',
+                    style: 'carousel',
+                    spacing: -0.6,
+                    nav: false,
+                    buttons:   true,
+                };
+                $('.my-flipster').flipster(options);
+            });
+        </script>
     </head>
     <body>
         <!--왼쪽-->
@@ -39,33 +61,16 @@
                 </div>
             </div>
             <div id="main-container">
-                <section id="image-slide">
-                    <input type="radio" name="image-slide" id="s1">
-                    <input type="radio" name="image-slide" id="s2">
-                    <input type="radio" name="image-slide" id="s3" checked>
-                    <input type="radio" name="image-slide" id="s4">
-                    <input type="radio" name="image-slide" id="s5">
-                    <!-- <input type="radio" name="image-slide" id="s6"> -->
-                    
-                    <label for="s1" id="slide1">
-                        <img src="./styles/img/image1.JPG">
-                    </label>
-                    <label for="s2" id="slide2">
-                        <img src="./styles/img/image2.JPG">
-                    </label>
-                    <label for="s3" id="slide3">
-                        <img src="./styles/img/image3.JPG">
-                    </label>
-                    <label for="s4" id="slide4">
-                        <img src="./styles/img/image1.JPG">
-                    </label>
-                    <label for="s5" id="slide5">
-                        <img src="./styles/img/image5.JPG">
-                    </label>
-                    <!-- <label for="s6" id="slide6">
-                        <img src="./styles/img/image6.JPG">
-                    </label> -->
-                </section>
+
+                <div class="my-flipster">
+                    <ul>
+                      <li><img src="./styles/img/image1.JPG"></li>
+                      <li><img src="./styles/img/image2.JPG"></li>
+                      <li><img src="./styles/img/image3.JPG"></li>
+                      <li><img src="./styles/img/image4.JPEG"></li>
+                      <li><img src="./styles/img/image5.JPG"></li>
+                    </ul>
+                </div>
 
                 <div id="Bookmark-container">
                     <div id="heart-icon"></div>
