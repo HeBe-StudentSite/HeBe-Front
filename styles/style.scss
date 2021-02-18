@@ -176,6 +176,7 @@ body{
 
         & >.my-flipster {
             @include contentSet();
+            @include mainSet(absolute,83%,55%);
 
             img {
                 width: 550px;
